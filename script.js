@@ -34,7 +34,7 @@ document.addEventListener("click", () => {
 });
 
 // ==============================
-// 🔥 MENU ATIVO AUTOMÁTICO
+// MENU ATIVO AUTOMÁTICO
 // ==============================
 
 // Pega a página atual
