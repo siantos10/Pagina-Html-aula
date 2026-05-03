@@ -1,0 +1,313 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: #535252;
+}
+
+/* BOTÃO HAMBURGUER */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* MENU LISTA */
+.menu ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+}
+
+/* 🔥 PADRONIZA ITENS */
+.menu ul li {
+    width: 150px;
+    text-align: center;
+}
+
+/* LINKS */
+.menu ul li a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.menu ul li a:hover {
+    background-color: #ebced3;
+    color: #424147;
+}
+
+/* ATIVO */
+.menu a.active {
+    background-color: #ebced3;
+    color: #424147;
+    font-weight: bold;
+}
+
+/* ÍCONE HOME */
+.home-icon {
+    font-size: 18px;
+}
+
+.home-icon.active {
+    background: none;
+    color: white;
+    font-weight: normal;
+}
+
+.home-icon:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+}
+
+/* DROPDOWN */
+.drop-hover {
+    position: relative;
+}
+
+.drop-hover .drop {
+    position: absolute;
+    background-color: #65636b;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.drop-hover.active .drop {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    flex: 1;
+}
+
+/* COLUNAS */
+.left, .right {
+    width: 20%;
+    background: #f4f4f4;
+    padding: 15px;
+}
+/* 🔥 AJUSTE DAS LISTAS DO ASIDE */
+.left ul,
+.right ul {
+    padding-left: 20px;
+}
+
+.left li,
+.right li {
+    margin-bottom: 6px;
+}
+.main {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🔥 LAYOUT FULL */
+.container.full {
+    display: block;
+}
+
+.container.full .left,
+.container.full .right {
+    display: none;
+}
+
+.container.full .main {
+    width: 100%;
+}
+
+/* ========================= */
+/* ✨ ESTILO DE LEITURA */
+/* ========================= */
+
+.main.full {
+    max-width: 1200px;
+    margin: 0 auto;
+  
+}
+
+/* TÍTULOS */
+.main.full h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.main.full h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* PARÁGRAFOS */
+.main.full p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* LISTAS */
+.main.full ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.main.full li {
+    margin-bottom: 8px;
+}
+
+/* CÓDIGO */
+.main.full pre {
+    background: #1e1e1e;
+    color: #00ff88;
+    padding: 15px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.main.full code {
+    background: #eee;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* BANNER */
+.banner {
+    background: #ddd;
+    padding: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* SEPARATOR */
+.separator {
+    height: 10px;
+    background: #ccc;
+    margin-bottom: 10px;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    width: calc(50% - 10px);
+    background: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+.footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 1024px) {
+    .left, .right { width: 25%; }
+    .main { width: 50%; }
+    .card { width: 100%; }
+}
+
+@media (max-width: 768px) {
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    .menu ul.active {
+        display: flex;
+    }
+
+    .menu ul li {
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .main, .right {
+        width: 100%;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    /* DROPDOWN MOBILE */
+    .drop-hover .drop {
+        position: static;
+        display: none;
+    }
+
+    .drop-hover.active .drop {
+        display: block;
+    }
+}
